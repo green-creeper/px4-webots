@@ -1,0 +1,66 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/road/protos/StraightRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Grass.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/advertising_board/protos/AdvertisingBoard.proto"
+EXTERNPROTO "../protos/Iris.proto"
+
+WorldInfo {
+  title "Iris Ardupilot"
+  basicTimeStep 2
+  FPS 20
+  gpsCoordinateSystem "WGS84"
+  gpsReference 50.4504 30.5245 0.001
+}
+Viewpoint {
+  orientation 0.1937663242412884 0.0014747877716766058 -0.9810466026601634 3.126659112890111
+  position 1.9523292569077277 -0.009714741092776202 0.842070581308197
+  follow "Iris"
+  followSmoothness 0.01
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 300 100
+  appearance Grass {
+  }
+}
+AdvertisingBoard {
+  translation 13.1012 17.8267 0
+  rotation 0 0 1 -1.469
+  frontTexture [
+    "../../../../../Tools/autotest/web-firmware/images/logo.png"
+  ]
+  backTexture [
+    "../../../../../Tools/autotest/web-firmware/images/logo.png"
+  ]
+  displayWidth 16.28
+  displayHeight 6
+  poleNumber 2
+  poleType "H-shape"
+  poleHeight 10
+}
+StraightRoadSegment {
+  translation -15 0.3 0.02
+  rotation 0 0 1 0.105
+  width 16.5
+  rightBorder FALSE
+  leftBorder FALSE
+  length 140
+}
+Iris {
+  hidden linearVelocity_0 -4.250200083664747e-19 -1.0228868817626588e-20 4.717005676009201e-06
+  hidden angularVelocity_0 -1.5247698192276828e-17 0 4.566666135197068e-19
+  translation 1.9855679198880318e-19 1.1508101943313344e-18 0.05496317712245743
+  rotation -0.7077972866238533 0.28597870166620337 0.6459405415680483 2.132704023542853e-18
+  controller "ardupilot_vehicle_controller"
+  controllerArgs [
+    "--motors"
+    "m1_motor, m2_motor, m3_motor, m4_motor"
+  ]
+}
